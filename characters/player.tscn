@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bduw8lsw5q2x6"]
+
+[ext_resource type="Texture2D" uid="uid://bvhetgyhlynie" path="res://assets/spritesheet.png" id="1_dnjla"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3eadt"]
+radius = 21.0
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3eadt")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_dnjla")
+region_enabled = true
+region_rect = Rect2(0, 512, 64, 64)
+
+[node name="Cam" type="Camera2D" parent="."]

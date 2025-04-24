@@ -10,6 +10,17 @@ config_version=5
 
 [application]
 
-config/name="BrotatoClone"
+config/name="Brotegg"
+run/main_scene="uid://ddumanodinxbk"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://cmf66yaqh2sfc"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

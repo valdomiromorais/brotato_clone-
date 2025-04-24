@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=4 uid="uid://db2paj2ktkgsk"]
+
+[ext_resource type="PackedScene" uid="uid://by7mme3wa6e56" path="res://levels/base_terrain.tscn" id="1_26ik6"]
+[ext_resource type="PackedScene" uid="uid://d1vudjn1iwt1f" path="res://levels/decoration.tscn" id="2_26ik6"]
+
+[node name="Level01" type="Node2D"]
+
+[node name="BaseTerrain" parent="." instance=ExtResource("1_26ik6")]
+
+[node name="Decoration" parent="." instance=ExtResource("2_26ik6")]
+tile_map_data = PackedByteArray("AAAFAAYAAAADAAcAAAAHAAUAAAAEAAYAAAAPAAMAAAAEAAYAAAAKAAMAAAAGAAYAAAAHAA0AAAAGAAcAAAAMAAsAAAAGAAcAAAAOAA8AAAAGAAcAAAA=")
