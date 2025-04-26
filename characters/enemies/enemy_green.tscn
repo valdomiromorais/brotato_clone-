@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2pqb8tfvgve1"]
+
+[ext_resource type="PackedScene" uid="uid://cxbr2m81e8cbe" path="res://characters/enemies/enemy_template.tscn" id="1_wih1o"]
+
+[node name="EnemyGreen" instance=ExtResource("1_wih1o")]
+
+[node name="Sprite" parent="." index="0"]
+region_rect = Rect2(384, 512, 64, 64)
+
+[node name="Collision" parent="." index="1"]
+visible = true

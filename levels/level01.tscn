@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=4 uid="uid://db2paj2ktkgsk"]
+[gd_scene load_steps=5 format=4 uid="uid://db2paj2ktkgsk"]
 
 [ext_resource type="PackedScene" uid="uid://by7mme3wa6e56" path="res://levels/base_terrain.tscn" id="1_26ik6"]
 [ext_resource type="PackedScene" uid="uid://d1vudjn1iwt1f" path="res://levels/decoration.tscn" id="2_26ik6"]
 [ext_resource type="PackedScene" uid="uid://bduw8lsw5q2x6" path="res://characters/player.tscn" id="3_vsh7h"]
+[ext_resource type="PackedScene" uid="uid://c2pqb8tfvgve1" path="res://characters/enemies/enemy_green.tscn" id="4_emax3"]
 
 [node name="Level01" type="Node2D"]
 
@@ -13,3 +14,9 @@ tile_map_data = PackedByteArray("AAAFAAYAAAADAAcAAAAHAAUAAAAEAAYAAAAPAAMAAAAEAAY
 
 [node name="Player" parent="." instance=ExtResource("3_vsh7h")]
 position = Vector2(996, 923)
+
+[node name="EnemyGreen" parent="." instance=ExtResource("4_emax3")]
+position = Vector2(679, 700)
+
+[node name="EnemyGreen2" parent="." instance=ExtResource("4_emax3")]
+position = Vector2(1260, 695)

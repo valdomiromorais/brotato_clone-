@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxbr2m81e8cbe"]
+
+[ext_resource type="Texture2D" uid="uid://bvhetgyhlynie" path="res://assets/spritesheet.png" id="1_58dje"]
+[ext_resource type="Script" uid="uid://c0kea4emv0ima" path="res://scripts/enemy.gd" id="1_yw0po"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_58dje"]
+radius = 22.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yw0po"]
+radius = 96.0
+
+[node name="EnemyTemplate" type="CharacterBody2D" node_paths=PackedStringArray("dash_wait_timer")]
+script = ExtResource("1_yw0po")
+dash_wait_timer = NodePath("DashWaitTimer")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_58dje")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_58dje")
+region_enabled = true
+
+[node name="RangeArea" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="RangeArea"]
+shape = SubResource("CircleShape2D_yw0po")
+
+[node name="DashWaitTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="body_entered" from="RangeArea" to="." method="_on_body_entered"]
+[connection signal="timeout" from="DashWaitTimer" to="." method="_on_timer_timeout"]

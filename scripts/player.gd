@@ -4,6 +4,9 @@ class_name Player extends CharacterBody2D
 @export
 var move_speed: float = 256.0
 
+func _ready() -> void:
+	global.player = self
+
 func _physics_process(_delta: float) -> void:
 	move()
 
