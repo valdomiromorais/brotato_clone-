@@ -1,0 +1,96 @@
+[gd_scene load_steps=7 format=3 uid="uid://bsjs01e87o34k"]
+
+[ext_resource type="PackedScene" uid="uid://cpnkchlhfbowq" path="res://weapons/weapon_template.tscn" id="1_ivot3"]
+
+[sub_resource type="Animation" id="Animation_jindo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AttackArea/Collision:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_ivot3"]
+resource_name = "attack"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2, 0.25, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.523599, 3.14159, 3.14159, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AttackArea/Collision:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iegkh"]
+_data = {
+&"RESET": SubResource("Animation_jindo"),
+&"attack": SubResource("Animation_ivot3")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ivot3"]
+size = Vector2(13, 30)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ivot3"]
+radius = 40.0
+
+[node name="ShortSword" instance=ExtResource("1_ivot3")]
+
+[node name="Weapon" parent="." index="0"]
+offset = Vector2(0, -20)
+flip_h = true
+region_rect = Rect2(0, 576, 64, 64)
+
+[node name="Arm01" parent="." index="1"]
+position = Vector2(0, 18)
+offset = Vector2(0, -20)
+region_rect = Rect2(64, 512, 64, 64)
+
+[node name="Animation" parent="." index="3"]
+libraries = {
+&"": SubResource("AnimationLibrary_iegkh")
+}
+
+[node name="Collision" type="CollisionShape2D" parent="AttackArea" index="0"]
+position = Vector2(-0.5, -25)
+shape = SubResource("RectangleShape2D_ivot3")
+disabled = true
+
+[node name="Collision" type="CollisionShape2D" parent="DetectionkArea" index="0"]
+shape = SubResource("CircleShape2D_ivot3")

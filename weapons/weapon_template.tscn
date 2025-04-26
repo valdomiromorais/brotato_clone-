@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpnkchlhfbowq"]
+
+[ext_resource type="Texture2D" uid="uid://bvhetgyhlynie" path="res://assets/spritesheet.png" id="1_eyime"]
+
+[node name="WeaponTemplate" type="Node2D"]
+
+[node name="Weapon" type="Sprite2D" parent="."]
+texture = ExtResource("1_eyime")
+region_enabled = true
+
+[node name="Arm01" type="Sprite2D" parent="."]
+texture = ExtResource("1_eyime")
+region_enabled = true
+
+[node name="Arm02" type="Sprite2D" parent="."]
+texture = ExtResource("1_eyime")
+region_enabled = true
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+
+[node name="AttackArea" type="Area2D" parent="."]
+
+[node name="DetectionkArea" type="Area2D" parent="."]

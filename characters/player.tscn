@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bduw8lsw5q2x6"]
+[gd_scene load_steps=4 format=3 uid="uid://bduw8lsw5q2x6"]
 
+[ext_resource type="Script" uid="uid://bgql1xdy3jm3g" path="res://scripts/player.gd" id="1_3eadt"]
 [ext_resource type="Texture2D" uid="uid://bvhetgyhlynie" path="res://assets/spritesheet.png" id="1_dnjla"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3eadt"]
 radius = 21.0
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_3eadt")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_3eadt")
@@ -16,3 +18,25 @@ region_enabled = true
 region_rect = Rect2(0, 512, 64, 64)
 
 [node name="Cam" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+editor_draw_drag_margin = true
+
+[node name="WeaponManager" type="Node2D" parent="."]
+
+[node name="Weapon01" type="Marker2D" parent="WeaponManager"]
+position = Vector2(64, 64)
+
+[node name="Weapon02" type="Marker2D" parent="WeaponManager"]
+position = Vector2(-64, 64)
+
+[node name="Weapon03" type="Marker2D" parent="WeaponManager"]
+position = Vector2(-64, -64)
+
+[node name="Weapon04" type="Marker2D" parent="WeaponManager"]
+position = Vector2(64, -64)
+
+[node name="Weapon05" type="Marker2D" parent="WeaponManager"]
+position = Vector2(96, 0)
+
+[node name="Weapon06" type="Marker2D" parent="WeaponManager"]
+position = Vector2(-96, 0)
